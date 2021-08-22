@@ -6,11 +6,17 @@ for (let card of cards) {
     
     card.addEventListener("click", function() {
         
+    const videoID = card.getAttribute('id');
+        
     modalOverlay.classList.add('active')
+
+    modalOverlay.querySelector('iframe').src = `https://youtube.com/embed/${videoID}`
+    
 })
 }
 
-document.querySelector('.close-modal').addEventListener('click', function () {
+document.querySelector('.close-modal').addEventListener('click', function() {
     
     modalOverlay.classList.remove('active')
+    modalOverlay.querySelector('iframe').src = ""
 })
